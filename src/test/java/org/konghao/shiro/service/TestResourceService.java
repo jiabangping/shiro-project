@@ -73,6 +73,14 @@ public class TestResourceService {
 		res.setParent_ids("0/1/");
 		resourceService.add(res);
 		
+		res = new Resource();
+		res.setName("设置用户角色");
+		res.setUrl("/admin/user/setUserRole/*");
+		res.setParent_id(1);
+		res.setType("button");
+		res.setParent_ids("0/1/");
+		resourceService.add(res);
+		
 		
 		res = new Resource();
 		res.setName("添加资源");
@@ -96,6 +104,38 @@ public class TestResourceService {
 		res.setType("button");
 		res.setParent_ids("0/2/");
 		res.setUrl("/admin/res/update/*");
+		resourceService.add(res);
+		
+		res = new Resource();
+		res.setName("添加角色");
+		res.setUrl("/admin/role/add/*");
+		res.setParent_id(3);
+		res.setType("button");
+		res.setParent_ids("0/3/");
+		resourceService.add(res);
+		
+		res = new Resource();
+		res.setName("删除角色");
+		res.setUrl("/admin/role/delete/*");
+		res.setParent_id(3);
+		res.setType("button");
+		res.setParent_ids("0/3/");
+		resourceService.add(res);
+		
+		res = new Resource();
+		res.setName("修改角色");
+		res.setParent_id(3);
+		res.setType("button");
+		res.setParent_ids("0/3/");
+		res.setUrl("/admin/role/update/*");
+		resourceService.add(res);
+		
+		res = new Resource();
+		res.setName("设置角色资源");
+		res.setParent_id(3);
+		res.setType("button");
+		res.setParent_ids("0/3/");
+		res.setUrl("/admin/role/setRolePermission/*");
 		resourceService.add(res);
 	}
 }
