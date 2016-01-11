@@ -25,7 +25,7 @@ public class RoleController {
 	private IRoleService roleService;
 	@Inject
 	private IResourceService resourceService;
-	
+	//@RequiresPermissions("role:list") 这里的annotation是需要定义 aop 切面，用于代理如@RequiresPermissions注解的控制器，进行权限控制。
 	@RequestMapping("/list")
 	public String list(Model model) {
 		model.addAttribute("roles", roleService.list());
@@ -37,13 +37,11 @@ public class RoleController {
 		model.addAttribute("role", new Role());
 		return "role/add";
 	}
-	
 	@RequestMapping(value="/add",method=RequestMethod.POST)
 	public String add(Role role,Model model) {
 		roleService.add(role);
 		return "redirect:/admin/role/list";
 	}
-	
 	@RequestMapping(value="/update/{id}",method=RequestMethod.GET)
 	public String update(Model model,@PathVariable int id) {
 		model.addAttribute("role", roleService.load(id));

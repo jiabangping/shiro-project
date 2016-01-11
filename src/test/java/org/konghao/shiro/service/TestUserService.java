@@ -40,11 +40,12 @@ public class TestUserService {
 		TransactionSynchronizationManager.unbindResource(sessionFactory);
 	}
 	
+	//初始化系统用户数据
 	@Test
 	public void testAdd() {
 		User u = new User();
-		u.setUsername("kh");
-		u.setNickname("空号");
+		u.setUsername("admin");
+		u.setNickname("系统管理员");
 		u.setStatus(1);
 		u.setPassword("111");
 		userService.add(u);

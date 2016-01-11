@@ -22,7 +22,7 @@ public class UrlPermission implements Permission {
 		this.url = url;
 	}
 
-	@Override
+	@Override//表明
 	public boolean implies(Permission p) {
 		if(!(p instanceof UrlPermission)) return false;
 		UrlPermission up = (UrlPermission)p;

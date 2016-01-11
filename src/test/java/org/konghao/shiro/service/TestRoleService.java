@@ -43,22 +43,25 @@ public class TestRoleService {
 	@Test
 	public void testAddRole() {
 		Role r = new Role();
+		r.setId(1);
 		r.setName("admin");//管理员
 		roleService.add(r);
 		
 		Role r2 = new Role();
+		r.setId(2);
 		r2.setName("jingli");//经理
 		roleService.add(r2);
 		
 		Role r3 = new Role();
+		r.setId(3);
 		r3.setName("commonuser");//普通用户
 		roleService.add(r3);
 	}
 	
 	@Test
 	public void testAddUserRole() {
-		roleService.addUserRole(1, 2); //给空号    经理
-		roleService.addUserRole(2, 1); //张三       admin角色 
+		roleService.addUserRole(1, 1); //给admin 管理员角色
+		roleService.addUserRole(2, 2); //张三       经理角色
 		roleService.addUserRole(3, 2); //给李四    经理角色
 		roleService.addUserRole(3, 3); //给李四    普通用户角色 
 	}

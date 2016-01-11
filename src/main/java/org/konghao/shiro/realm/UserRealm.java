@@ -32,6 +32,7 @@ public class UserRealm extends AuthorizingRealm {
 		List<String> permissions = new ArrayList<String>();
 		for(Resource r:reses) {
 			permissions.add(r.getUrl());
+//			permissions.add(r.getPermission());
 		}
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 		info.setRoles(new HashSet<String>(roles));
