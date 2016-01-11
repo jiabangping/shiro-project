@@ -2,8 +2,10 @@ package org.konghao.shiro.controller;
 
 import javax.inject.Inject;
 
+import org.apache.wicket.request.resource.IResource;
 import org.konghao.shiro.model.Resource;
 import org.konghao.shiro.service.IResourceService;
+import org.konghao.shiro.web.InitServlet;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,13 @@ public class ResourceController {
 	@Inject
 	private IResourceService resourceService;
 
+
+	@RequestMapping(value="/index")
+	public String index(Model model) {
+		model.addAttribute("reses", resourceService.listResource2());
+		return "index";
+	}
+	
 	@RequestMapping("/list")
 	public String list(Model model) {
 		model.addAttribute("reses", resourceService.listResource());

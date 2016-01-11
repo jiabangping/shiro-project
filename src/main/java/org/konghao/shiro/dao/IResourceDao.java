@@ -7,4 +7,6 @@ import org.konghao.shiro.model.Resource;
 
 public interface IResourceDao extends IBaseDao<Resource>{
 	public List<Resource> listResource();
+	
+	public List<Resource> listResource2();
 }

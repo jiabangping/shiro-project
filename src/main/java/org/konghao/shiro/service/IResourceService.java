@@ -14,4 +14,6 @@ public interface IResourceService {
 	public Resource load(int id);
 	
 	public List<Resource> listResource();
+	
+	public List<Resource> listResource2();
 }

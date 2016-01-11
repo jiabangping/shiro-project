@@ -31,4 +31,9 @@ public class ResourceService implements IResourceService {
 	public List<Resource> listResource() {
 		return resourceDao.listResource();
 	}
+
+	@Override
+	public List<Resource> listResource2() {
+		return resourceDao.listResource2();
+	}
 }

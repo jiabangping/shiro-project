@@ -46,12 +46,21 @@ public final class inc_jsp extends org.apache.jasper.runtime.HttpJspBase
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "/jsp/common.jsp", out, false);
       out.write("\r\n");
       out.write("<span>\r\n");
+      out.write("\r\n");
       out.write("<a href=\"");
       out.print(request.getContextPath() );
       out.write("/admin/user/add\" class=\"admin_link\">添加用户</a>\r\n");
       out.write("<a href=\"");
       out.print(request.getContextPath() );
       out.write("/admin/user/list\" class=\"admin_link\">用户列表</a>\r\n");
+      out.write("\r\n");
+      out.write("<a href=\"");
+      out.print(request.getContextPath() );
+      out.write("/admin/role/add\" class=\"admin_link\">添加角色</a>\r\n");
+      out.write("<a href=\"");
+      out.print(request.getContextPath() );
+      out.write("/admin/role/list\" class=\"admin_link\">角色列表</a>\r\n");
+      out.write("\r\n");
       out.write("</span>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

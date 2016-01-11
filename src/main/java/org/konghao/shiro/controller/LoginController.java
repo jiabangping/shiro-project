@@ -4,7 +4,9 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.apache.wicket.request.resource.IResource;
 import org.konghao.shiro.kit.ShiroKit;
+import org.konghao.shiro.web.InitServlet;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +35,9 @@ public class LoginController {
 			return "redirect:/admin/user/list";
 		} else {
 			model.addAttribute("emsg", emsg);
-			return "/login";
+			//return "/login";
+			return "redirect:/admin/res/index";
 		}
 	}
+	
 }
