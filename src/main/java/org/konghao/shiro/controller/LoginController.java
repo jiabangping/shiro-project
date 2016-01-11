@@ -4,9 +4,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.apache.wicket.request.resource.IResource;
 import org.konghao.shiro.kit.ShiroKit;
-import org.konghao.shiro.web.InitServlet;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +19,14 @@ public class LoginController {
 		return "login";
 	}
 	
+	@RequestMapping(value="/logout2",method=RequestMethod.GET)
+	public String logout() {
+		//return "redirect:/logout";
+		Subject subject  = SecurityUtils.getSubject();
+		subject.logout();
+		return "login";
+	}
+	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public String login(String username,String password,Model model) {
 		Subject subject = SecurityUtils.getSubject();
@@ -32,12 +38,14 @@ public class LoginController {
 			emsg = e.getMessage();
 		}
 		if(ShiroKit.isEmpty(emsg)) {
-			return "redirect:/admin/user/list";
+			//return "redirect:/admin/user/list";
+			return "redirect:/admin/res/index";
 		} else {
 			model.addAttribute("emsg", emsg);
 			//return "/login";
 			return "redirect:/admin/res/index";
 		}
 	}
-	
+
+
 }

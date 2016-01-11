@@ -46,7 +46,7 @@ public class ResourceController {
 	@RequestMapping(value="/update/{id}",method=RequestMethod.GET)
 	public String update(@PathVariable int id,Model model) {
 		model.addAttribute("res", resourceService.load(id));
-		return "res/add";
+		return "res/update";
 	}
 	
 	@RequestMapping(value="/update/{id}",method=RequestMethod.POST)
@@ -55,6 +55,7 @@ public class ResourceController {
 		tr.setName(res.getName());
 		tr.setPermission(res.getPermission());
 		tr.setUrl(res.getUrl());
+		tr.setType(res.getType());
 		resourceService.update(tr);
 		return "redirect:/admin/res/list";
 	}

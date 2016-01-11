@@ -44,17 +44,20 @@ public class TestRoleService {
 	public void testAddRole() {
 		Role r = new Role();
 		r.setId(1);
-		r.setName("admin");//管理员
+		r.setName("系统管理员");//管理员
+		r.setSn("admin");
 		roleService.add(r);
 		
 		Role r2 = new Role();
-		r.setId(2);
-		r2.setName("jingli");//经理
+		r2.setId(2);
+		r2.setName("经理");//经理
+		r2.setSn("jingli");
 		roleService.add(r2);
 		
 		Role r3 = new Role();
-		r.setId(3);
-		r3.setName("commonuser");//普通用户
+		r3.setId(3);
+		r3.setName("普通用户");//普通用户
+		r3.setSn("commonuser");
 		roleService.add(r3);
 	}
 	
@@ -82,16 +85,25 @@ public class TestRoleService {
 		roleService.addRoleResource(1, 2);
 		roleService.addRoleResource(1, 3);
 		roleService.addRoleResource(1, 4);
-		
 		roleService.addRoleResource(1, 5);
 		roleService.addRoleResource(1, 6);            
-		roleService.addRoleResource(1, 7);          
-	
+		roleService.addRoleResource(1, 7); 
+		roleService.addRoleResource(1, 8);
+		roleService.addRoleResource(1, 9);            
+		roleService.addRoleResource(1, 10);  
+		roleService.addRoleResource(1, 11);  
+		roleService.addRoleResource(1, 12);  
+		roleService.addRoleResource(1, 13);  
+		roleService.addRoleResource(1, 14);  
+		roleService.addRoleResource(1, 15);  
 		
-		//经理角色 有 用户管理权限 ，用户添加，用户删除
+		//经理角色 有 用户管理权限 ，用户添加，用户删除 ..
 		roleService.addRoleResource(2, 2);
 		roleService.addRoleResource(2, 3);
 		roleService.addRoleResource(2, 4);
+		roleService.addRoleResource(2, 5);
+		roleService.addRoleResource(2, 6);
+		roleService.addRoleResource(2, 7);
 		
 		
 		//普通用户有 用户查看角色

@@ -147,7 +147,7 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t&nbsp;\r\n");
           out.write("\t\t\t\t\t<a href=\"listRes/");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.id }", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" class=\"list_op\">查询管理资源</a>\r\n");
+          out.write("\" class=\"list_op\">查看用户权限</a>\r\n");
           out.write("\t\t\t\t</td>\r\n");
           out.write("\t\t\t</tr>\r\n");
           out.write("\t\t");

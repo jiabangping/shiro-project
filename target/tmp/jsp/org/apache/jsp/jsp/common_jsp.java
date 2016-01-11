@@ -62,6 +62,18 @@ public final class common_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+
+	String path = request.getContextPath();
+
+	// 获得本项目的地址(例如: http://localhost:8080/MyApp/)赋值给basePath变量
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("<span>\r\n");
       //  shiro:authenticated
       org.apache.shiro.web.tags.AuthenticatedTag _jspx_th_shiro_authenticated_0 = (org.apache.shiro.web.tags.AuthenticatedTag) _jspx_tagPool_shiro_authenticated.get(org.apache.shiro.web.tags.AuthenticatedTag.class);
@@ -147,8 +159,8 @@ public final class common_jsp extends org.apache.jasper.runtime.HttpJspBase
           _jspx_tagPool_shiro_hasPermission_name.reuse(_jspx_th_shiro_hasPermission_2);
           out.write("\r\n");
           out.write("\t<a href=\"");
-          out.print(request.getContextPath() );
-          out.write("/logout\">退出系统</a>\r\n");
+          out.print(basePath);
+          out.write("logout2\">退出系统</a>\r\n");
           out.write("\t欢迎 ");
           if (_jspx_meth_shiro_principal_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_shiro_authenticated_0, _jspx_page_context))
             return;

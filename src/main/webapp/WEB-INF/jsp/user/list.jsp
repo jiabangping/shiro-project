@@ -41,7 +41,7 @@
 				<td>
 					<a href="update/${user.id }" class="list_op">更新</a>
 				&nbsp;
-					<a href="listRes/${user.id }" class="list_op">查询管理资源</a>
+					<a href="listRes/${user.id }" class="list_op">查看用户权限</a>
 				</td>
 			</tr>
 		</c:forEach>
