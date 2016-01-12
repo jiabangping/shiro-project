@@ -11,9 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+<<<<<<< HEAD
 @RequestMapping("/")
+=======
+@RequestMapping("/")//testfetch sdfsdfsdfds
+>>>>>>> branch 'master' of https://github.com/jiabangping/shiro-project.git
 public class LoginController {
-
+//33333333333333333
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String login() {
 		return "login";
