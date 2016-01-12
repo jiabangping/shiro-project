@@ -36,4 +36,9 @@ public class ResourceService implements IResourceService {
 	public List<Resource> listResource2() {
 		return resourceDao.listResource2();
 	}
+
+	@Override
+	public Resource findById(int id) {
+		return (Resource)resourceDao.queryObject("from Resource where id=?", id);
+	}
 }

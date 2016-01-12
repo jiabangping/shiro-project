@@ -29,6 +29,8 @@
 				<td>
 					<a href="update/${role.id }" class="list_op">更新</a>
 				&nbsp;
+					<a href="delete${role.id }" class="list_op">删除</a>
+				&nbsp;
 					<a href="listRes/${role.id }" class="list_op">查看角色权限(资源)</a>
 				</td>
 			</tr>

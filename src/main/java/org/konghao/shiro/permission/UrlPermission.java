@@ -31,5 +31,16 @@ public class UrlPermission implements Permission {
 		System.out.println(this.getUrl()+","+up.getUrl()+","+patternMatcher.matches(this.getUrl(), up.getUrl()));
 		return patternMatcher.matches(this.getUrl(), up.getUrl());
 	}
+	
+	
+	public static void main(String[] args) {
+		PatternMatcher patternMatcher = new AntPathMatcher();
+		//拥有的权限 /*/list   
+		//判断能否访问 /admin/user/list
+		boolean result = patternMatcher.matches("*/*/list", " /admin/user/list");
+		boolean result1 = patternMatcher.matches("*/role/list", " /admin/role/list");
+		System.out.println(result);
+		System.out.println(result1);
+	}
 
 }

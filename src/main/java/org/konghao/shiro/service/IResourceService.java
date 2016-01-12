@@ -13,6 +13,8 @@ public interface IResourceService {
 	
 	public Resource load(int id);
 	
+	public Resource findById(int id);
+	
 	public List<Resource> listResource();
 	
 	public List<Resource> listResource2();

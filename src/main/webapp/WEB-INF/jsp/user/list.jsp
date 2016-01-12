@@ -41,6 +41,8 @@
 				<td>
 					<a href="update/${user.id }" class="list_op">更新</a>
 				&nbsp;
+				<a href="delete/${user.id }" class="list_op">删除</a>
+				&nbsp;
 					<a href="listRes/${user.id }" class="list_op">查看用户权限</a>
 				</td>
 			</tr>

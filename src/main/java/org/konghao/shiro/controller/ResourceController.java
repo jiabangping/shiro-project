@@ -2,10 +2,8 @@ package org.konghao.shiro.controller;
 
 import javax.inject.Inject;
 
-import org.apache.wicket.request.resource.IResource;
 import org.konghao.shiro.model.Resource;
 import org.konghao.shiro.service.IResourceService;
-import org.konghao.shiro.web.InitServlet;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,19 +25,39 @@ public class ResourceController {
 	
 	@RequestMapping("/list")
 	public String list(Model model) {
-		model.addAttribute("reses", resourceService.listResource());
+		//model.addAttribute("reses", resourceService.listResource());
+		model.addAttribute("reses", resourceService.listResource2());
 		return "res/list";
 	}
 	
-	@RequestMapping(value="/add",method=RequestMethod.GET)
-	public String add(Model model) {
-		model.addAttribute("res", new Resource());
+	@RequestMapping(value="/add/{id}",method=RequestMethod.GET)
+	public String add(@PathVariable int id,Model model) {
+		//根据id查找这条resource
+		Resource r = resourceService.findById(id);
+		if(r==null) {
+			model.addAttribute("res", new Resource(id,id+"/"));
+		}else {
+			model.addAttribute("res",new Resource(id,r.getParent_ids()));
+		}
 		return "res/add";
 	}
 	
 	@RequestMapping(value="/add",method=RequestMethod.POST)
 	public String add(Resource res,Model model) {
+		/*if(res.getParent_id()==0) {
+			
+		}
+		res.setParent_ids("0/");*/
+		if(res.getParent_id() !=0) {
+			res.setParent_ids(res.getParent_ids()+res.getParent_id()+"/");
+		}
 		resourceService.add(res);
+		return "redirect:/admin/res/list";
+	}
+	
+	@RequestMapping("delete/{id}")
+	public String delete(@PathVariable int id) {
+		resourceService.delete(id);
 		return "redirect:/admin/res/list";
 	}
 	

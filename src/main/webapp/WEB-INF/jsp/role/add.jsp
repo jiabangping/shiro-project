@@ -23,6 +23,14 @@
 			<td class="rightTd">角色SN:</td>
 			<td class="leftTd"><sf:input path="sn" size="30"/></td>
 		</tr>
+		
+		<%-- <tr>
+			<td class="rightTd">资源:</td>
+			<td class="leftTd">
+		<sf:checkboxes path="roles" items="${res }" itemValue="id" itemLabel="name"/>
+			</td>
+		</tr> --%>
+		
 		<tr>
 			<td colspan="2" class="centerTd"><input type="submit" value="添加角色"/><input type="reset"/></td>
 		</tr>

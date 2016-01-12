@@ -43,7 +43,7 @@ $(function(){
 			<td>资源名称</td>
 			<td>资源url</td>
 			<td>资源权限字符串</td>
-			<td>操作</td>
+			<td>授权</td>
 		</tr>
 		</thead>
 		<tbody>

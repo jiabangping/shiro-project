@@ -35,6 +35,9 @@ public class RoleController {
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String add(Model model) {
 		model.addAttribute("role", new Role());
+	/*	List<Resource> res = resourceService.listResource2();
+		model.addAttribute("res", res);
+		*/
 		return "role/add";
 	}
 	@RequestMapping(value="/add",method=RequestMethod.POST)
@@ -42,6 +45,13 @@ public class RoleController {
 		roleService.add(role);
 		return "redirect:/admin/role/list";
 	}
+	
+	@RequestMapping("delete/{id}")
+	public String delete(@PathVariable int id) {
+		roleService.delete(id);
+		return "redirect:/admin/role/list";
+	}
+	
 	@RequestMapping(value="/update/{id}",method=RequestMethod.GET)
 	public String update(Model model,@PathVariable int id) {
 		model.addAttribute("role", roleService.load(id));

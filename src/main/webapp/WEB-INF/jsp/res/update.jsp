@@ -34,7 +34,7 @@
 				<tr>
 					<td class="rightTd">资源类型:</td>
 					<td class="leftTd"><sf:select path="type" size=""
-							style="width:80px;height:25px">
+							style="width:80px;height:25px" disabled="true">
 							<sf:option value="menu"></sf:option>
 							<sf:option value="button"></sf:option>
 						</sf:select></td>

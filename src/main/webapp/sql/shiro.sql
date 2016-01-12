@@ -25,30 +25,30 @@ CREATE TABLE IF NOT EXISTS `t_resource` (
   `parent_ids` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10024 DEFAULT CHARSET=utf8;
 
--- 正在导出表  shiro_project.t_resource 的数据：~14 rows (大约)
+-- 正在导出表  shiro_project.t_resource 的数据：~19 rows (大约)
 /*!40000 ALTER TABLE `t_resource` DISABLE KEYS */;
 INSERT INTO `t_resource` (`id`, `name`, `permission`, `url`, `parent_id`, `parent_ids`, `type`) VALUES
-	(1, '用户管理', NULL, '/admin/user/list', 0, '0/', 'menu'),
-	(2, '资源管理', NULL, '/admin/res/list', 0, '0/', 'menu'),
-	(3, '角色管理', NULL, '/admin/role/list', 0, '0/', 'menu'),
-	(4, '添加用户', NULL, '/admin/user/add*', 1, '0/1/', 'button'),
-	(5, '删除用户', NULL, '/admin/user/delete/*', 1, '0/1/', 'button'),
-	(6, '更新用户', NULL, '/admin/user/update/*', 1, '0/1/', 'button'),
-	(7, '设置用户角色', NULL, '/admin/user/setUserRole/*', 1, '0/1/', 'button'),
-	(8, '添加资源', NULL, '/admin/res/add*', 2, '0/2/', 'button'),
-	(9, '删除资源', NULL, '/admin/res/delete/*', 2, '0/2/', 'button'),
-	(10, '修改资源', NULL, '/admin/res/update/*', 2, '0/2/', 'button'),
-	(11, '添加角色', NULL, '/admin/role/add*', 3, '0/3/', 'button'),
-	(12, '删除角色', NULL, '/admin/role/delete/*', 3, '0/3/', 'button'),
-	(13, '修改角色', NULL, '/admin/role/update/*', 3, '0/3/', 'button'),
-	(14, '设置角色资源', NULL, '/admin/role/setRolePermission/*', 3, '0/3/', 'button'),
-	(15, '资源菜单页', NULL, '/admin/res/index', 2, '0/3/', 'button'),
-	(16, '快递管理', '', '/admin/express/list', 0, '0/', 'menu'),
-	(17, '查询用户权限', NULL, '/admin/user/listRes/*', 1, '0/1/', 'button'),
-	(18, '设置角色权限(资源)', '', '/admin/role/setRes/*', 0, '0/3/', 'button'),
-	(19, '查看角色权限(资源)', '', '/admin/role/listRes/*', 0, '0/3/', 'button');
+	(10001, '用户管理', NULL, '/admin/user/list', 0, '0/', 'menu'),
+	(10002, '资源管理', NULL, '/admin/res/list', 0, '0/', 'menu'),
+	(10003, '角色管理', NULL, '/admin/role/list', 0, '0/', 'menu'),
+	(10004, '添加用户', NULL, '/admin/user/add*', 1, '0/10001/', 'button'),
+	(10005, '删除用户', NULL, '/admin/user/delete/*', 1, '0/10001/', 'button'),
+	(10006, '更新用户', NULL, '/admin/user/update/*', 1, '0/10001/', 'button'),
+	(10007, '设置用户角色', NULL, '/admin/user/setUserRole/*', 1, '0/10001/', 'button'),
+	(10008, '添加资源', NULL, '/admin/res/add/*', 2, '0/10002/', 'button'),
+	(10009, '删除资源', NULL, '/admin/res/delete/*', 2, '0/10002/', 'button'),
+	(10010, '修改资源', NULL, '/admin/res/update/*', 2, '0/10002/', 'button'),
+	(10011, '添加角色', NULL, '/admin/role/add*', 3, '0/10003/', 'button'),
+	(10012, '删除角色', NULL, '/admin/role/delete/*', 3, '0/10003/', 'button'),
+	(10013, '修改角色', NULL, '/admin/role/update/*', 3, '0/10003/', 'button'),
+	(10014, '设置角色资源', NULL, '/admin/role/setRolePermission/*', 3, '0/10003/', 'button'),
+	(10015, '资源菜单页', NULL, '/admin/res/index', 2, '0/10003/', 'button'),
+	(10016, '快递管理', '', '/admin/express/list', 0, '0/', 'menu'),
+	(10017, '查询用户权限', NULL, '/admin/user/listRes/*', 1, '0/10001/', 'button'),
+	(10018, '设置角色权限(资源)', '', '/admin/role/setRes*', 0, '0/10003/', 'button'),
+	(10019, '查看角色权限(资源)', '', '/admin/role/listRes/*', 0, '0/10003/', 'button');
 /*!40000 ALTER TABLE `t_resource` ENABLE KEYS */;
 
 
@@ -58,9 +58,9 @@ CREATE TABLE IF NOT EXISTS `t_role` (
   `name` varchar(255) DEFAULT NULL,
   `sn` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- 正在导出表  shiro_project.t_role 的数据：~0 rows (大约)
+-- 正在导出表  shiro_project.t_role 的数据：~3 rows (大约)
 /*!40000 ALTER TABLE `t_role` DISABLE KEYS */;
 INSERT INTO `t_role` (`id`, `name`, `sn`) VALUES
 	(1, '系统管理员', 'admin'),
@@ -75,37 +75,37 @@ CREATE TABLE IF NOT EXISTS `t_role_res` (
   `res_id` int(11) DEFAULT NULL,
   `role_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
--- 正在导出表  shiro_project.t_role_res 的数据：~0 rows (大约)
+-- 正在导出表  shiro_project.t_role_res 的数据：~26 rows (大约)
 /*!40000 ALTER TABLE `t_role_res` DISABLE KEYS */;
 INSERT INTO `t_role_res` (`id`, `res_id`, `role_id`) VALUES
-	(1, 1, 1),
-	(2, 2, 1),
-	(3, 3, 1),
-	(4, 4, 1),
-	(5, 5, 1),
-	(6, 6, 1),
-	(7, 7, 1),
-	(8, 8, 1),
-	(9, 9, 1),
-	(10, 10, 1),
-	(11, 11, 1),
-	(12, 12, 1),
-	(13, 13, 1),
-	(14, 14, 1),
-	(15, 15, 1),
-	(16, 2, 2),
-	(17, 3, 2),
-	(18, 4, 2),
-	(19, 5, 2),
-	(20, 6, 2),
-	(21, 7, 2),
-	(22, 17, 1),
-	(23, 18, 1),
-	(24, 19, 1),
-	(25, 15, 2),
-	(26, 15, 3);
+	(1, 10001, 1),
+	(2, 10002, 1),
+	(3, 10003, 1),
+	(4, 10004, 1),
+	(5, 10005, 1),
+	(6, 10006, 1),
+	(7, 10007, 1),
+	(8, 10008, 1),
+	(9, 10009, 1),
+	(10, 10010, 1),
+	(11, 10011, 1),
+	(12, 10012, 1),
+	(13, 10013, 1),
+	(14, 10014, 1),
+	(15, 10015, 1),
+	(16, 10002, 2),
+	(17, 10003, 2),
+	(18, 10004, 2),
+	(19, 10005, 2),
+	(20, 10006, 2),
+	(21, 10007, 2),
+	(22, 10017, 1),
+	(23, 10018, 1),
+	(24, 10019, 1),
+	(25, 10015, 2),
+	(29, 10016, 1);
 /*!40000 ALTER TABLE `t_role_res` ENABLE KEYS */;
 
 
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `t_user` (
   `status` int(11) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  shiro_project.t_user 的数据：~3 rows (大约)
 /*!40000 ALTER TABLE `t_user` DISABLE KEYS */;
@@ -134,9 +134,9 @@ CREATE TABLE IF NOT EXISTS `t_user_role` (
   `role_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- 正在导出表  shiro_project.t_user_role 的数据：~0 rows (大约)
+-- 正在导出表  shiro_project.t_user_role 的数据：~4 rows (大约)
 /*!40000 ALTER TABLE `t_user_role` DISABLE KEYS */;
 INSERT INTO `t_user_role` (`id`, `role_id`, `user_id`) VALUES
 	(1, 1, 1),

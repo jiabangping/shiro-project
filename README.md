@@ -27,5 +27,5 @@ eclipse中使用git详细教程：http://p.primeton.com/articles/53ccec89e138236
 fetch: http://www.cnblogs.com/yejiurui/archive/2013/07/29/3223153.html
 
 我再提交点东西
-
+为了让资源 /parent_ids 的这种排序效果能够显示出来，将此表的主键设大从10000开始，
  

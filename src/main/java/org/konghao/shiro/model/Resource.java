@@ -18,6 +18,15 @@ public class Resource {
 	// 方便一条sql将资源列表查出来
 	private String parent_ids;
 
+
+	public Resource() {
+	}
+
+	public Resource(int parent_id, String parent_ids) {
+		this.parent_id = parent_id;
+		this.parent_ids = parent_ids;
+	}
+
 	@Id
 	@GeneratedValue
 	public int getId() {

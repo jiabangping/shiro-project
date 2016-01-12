@@ -62,6 +62,12 @@ public class UserController {
 		return "redirect:/admin/user/list";
 	}
 	
+	@RequestMapping("delete/{id}")
+	public String delete(@PathVariable int id) {
+		userService.delete(id);
+		return "redirect:/admin/user/list";
+	}
+	
 	@RequestMapping(value="update/{id}",method=RequestMethod.GET)
 	public String update(@PathVariable int id,Model model) {
 		User user = userService.load(id);
