@@ -20,4 +20,5 @@ securityManager.authorizer.permissionResolver = $urlPermissionResolver
 部门经理角色(depmgr)    拥有用户管理的权限
 普通用户 (commonuser)  
 
+我提交点东西
  
