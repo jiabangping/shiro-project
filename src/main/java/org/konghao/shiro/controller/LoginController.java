@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/")//testfetch
+@RequestMapping("/")
 public class LoginController {
 
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String login() {
 		return "login";
 	}
-	//werwerwe
+
 	@RequestMapping(value="/logout2",method=RequestMethod.GET)
 	public String logout() {
 		//return "redirect:/logout";
