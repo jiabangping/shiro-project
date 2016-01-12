@@ -21,7 +21,11 @@ securityManager.authorizer.permissionResolver = $urlPermissionResolver
 普通用户 (commonuser)  
 
 我提交点东西
+
 eclipse中使用git详细教程：http://p.primeton.com/articles/53ccec89e1382367e2000011 
 
 fetch: http://www.cnblogs.com/yejiurui/archive/2013/07/29/3223153.html
+
+我再提交点东西
+
  
