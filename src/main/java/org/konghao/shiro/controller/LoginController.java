@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/")//testfetch sdfsdfsdfds
 public class LoginController {
-
+//33333333333333333
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String login() {
 		return "login";
