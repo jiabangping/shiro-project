@@ -11,45 +11,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-<<<<<<< HEAD
 @RequestMapping("/")
-=======
-@RequestMapping("/")//testfetch sdfsdfsdfds
->>>>>>> branch 'master' of https://github.com/jiabangping/shiro-project.git
 public class LoginController {
-//33333333333333333
-	@RequestMapping(value="/login",method=RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		return "login";
 	}
 
-	@RequestMapping(value="/logout2",method=RequestMethod.GET)
+	@RequestMapping(value = "/logout2", method = RequestMethod.GET)
 	public String logout() {
-		//return "redirect:/logout";
-		Subject subject  = SecurityUtils.getSubject();
+		// return "redirect:/logout";
+		Subject subject = SecurityUtils.getSubject();
 		subject.logout();
 		return "login";
 	}
-	
-	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String login(String username,String password,Model model) {
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(String username, String password, Model model) {
 		Subject subject = SecurityUtils.getSubject();
-		UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+		UsernamePasswordToken token = new UsernamePasswordToken(username,
+				password);
 		String emsg = null;
 		try {
 			subject.login(token);
 		} catch (AuthenticationException e) {
 			emsg = e.getMessage();
 		}
-		if(ShiroKit.isEmpty(emsg)) {
-			//return "redirect:/admin/user/list";
+		if (ShiroKit.isEmpty(emsg)) {
+			// return "redirect:/admin/user/list";
 			return "redirect:/admin/res/index";
 		} else {
 			model.addAttribute("emsg", emsg);
-			//return "/login";
+			// return "/login";
 			return "redirect:/admin/res/index";
 		}
 	}
-
 
 }
