@@ -18,7 +18,7 @@ public class LoginController {
 	public String login() {
 		return "login";
 	}
-	
+	//werwerwe
 	@RequestMapping(value="/logout2",method=RequestMethod.GET)
 	public String logout() {
 		//return "redirect:/logout";
